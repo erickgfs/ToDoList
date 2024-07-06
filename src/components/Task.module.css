@@ -1,0 +1,32 @@
+.tasksContainer {
+    background: var(--gray-500);
+    padding: 1rem;
+    border: 1px solid var(--gray-400);
+    border-radius: 8px;
+    margin-top: 2rem;
+    width: 50%;
+}
+
+.task {
+    display: flex;
+    justify-content: space-between;
+    gap: 1rem;
+}
+
+.task input {
+    border: 1px solid var(--blue);
+    border-radius: 9999px;
+}
+
+.task p {
+    color: var(--gray-100);
+}
+
+.task svg {
+    color: var(--gray-300);
+    transition: color 0.1S;
+}
+
+.task svg:hover {
+    color: var(--danger);
+}
