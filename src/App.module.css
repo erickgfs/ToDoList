@@ -88,7 +88,7 @@
     flex-direction: column;
     justify-content: center;
     align-items: center;
-    width: 60%;
+    width: 50%;
     margin-top: 2rem;
     border-top: 2px solid var(--gray-400);
     border-radius: 8px;

@@ -1,7 +1,7 @@
-import { ChangeEvent, useState } from 'react';
+import { useState } from 'react';
 import styles from './Task.module.css';
 
-import { Trash } from 'phosphor-react';
+import { Trash, Check } from 'phosphor-react';
 
 interface TasksProps {
     task: string;
@@ -16,17 +16,24 @@ export function Task({task, onDeleteTask, onCheckTask}: TasksProps) {
         onDeleteTask(task);
     }
 
-    function handleCheckTask(event: ChangeEvent<HTMLInputElement>) {
-        onCheckTask(event.target.checked);
-        setIsChecked(isChecked);
+    function handleCheckTask() {
+        if(isChecked) {
+            setIsChecked(false);
+            onCheckTask(false);
+        }else {
+            setIsChecked(true);
+            onCheckTask(true);
+        }
     }
 
     return (
-        <div className={isChecked ? styles.tasksContainerDone : styles.tasksContainer}>
+        <div onClick={handleCheckTask} className={isChecked ? styles.tasksContainerDone : styles.tasksContainer}>
             <div className={styles.task}>
                 <div>
-                    <input onChange={handleCheckTask} id="checkBox" type="checkbox" />
-                    <label htmlFor="checkBox"></label>
+                    <input type="checkbox" checked={isChecked}/>
+                    <span className={isChecked ? styles.chackboxChecked : styles.chackbox}>
+                        {isChecked && <Check size={12} />}
+                    </span>
                 </div>
                 <p> {task} </p>
                 <Trash onClick={handleDeleteTask}/>

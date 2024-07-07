@@ -9,10 +9,26 @@
     color: var(--gray-100)
 }
 
+.tasksContainerDone {
+    background: var(--gray-500);
+    padding: 1rem;
+    border: 1px solid var(--gray-500);
+    border-radius: 8px;
+    margin-top: 2rem;
+    width: 50%;
+
+    color: var(--gray-300);
+    text-decoration: line-through;
+}
+
 .task {
     display: flex;
     justify-content: space-between;
     gap: 1rem;
+}
+
+.task p {
+    width: 90%;
 }
 
 .task svg {
@@ -22,4 +38,34 @@
 
 .task svg:hover {
     color: var(--danger);
+}
+
+.chackbox {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 1.5rem;
+    height: 1.5rem;
+    border: 2px solid var(--blue);
+    border-radius: 99px;
+}
+
+.chackboxChecked {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 1.5rem;
+    height: 1.5rem;
+    background: var(--purple-dark);
+    border: 2px solid var(--purple-dark);
+    border-radius: 99px;
+}
+
+.chackboxChecked svg {
+    color: var(--gray-100)
+}
+
+
+.task input {
+    display: none;
 }
